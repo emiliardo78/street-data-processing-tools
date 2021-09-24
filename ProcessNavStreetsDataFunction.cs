@@ -5198,7 +5198,7 @@ namespace GPProcessVendorDataFunctions
                 //  - if SIGN_TXTTP == "B" (direct), populate a branch
                 //  - if SIGN_TXTTP == "T" (direct), populate a toward
 
-                signText = (inputTableRow.get_Value(inToNameFI) as string).Trim();
+                signText = inputTableRow.get_Value(inToNameFI) is DBNull ? "" : (inputTableRow.get_Value(inToNameFI) as string).Trim();
 
                 if (signText.Length > 0)
                 {
